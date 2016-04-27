@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href="css/layout.css" rel="stylesheet">
+    <title>CaissaShare Gateway</title>
+  </head>
+  <body>
+    <div id="gateway_title" class="gateway">
+      <h2>Welcome to CaissaShare 0.3</h2>
+      <p>Please login (enter the server password to login as the instructor)</p>
+    </div>
+    <div id="gateway" class="gateway">
+      <form action="" name="portal">
+        Username:<br>
+        <input type="text" id="username">
+        <br>
+        Password (instructor only):<br>
+        <input type="password" id="password">
+      </form>
+      <button id="login" type="submit" onclick="doLogin()">Login</button>
+    </div>
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/gateway.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+* { 
+  font-family: 'Arimo', sans-serif;
+}
+
+html,body,#wrapper {
+  height:98%;
+  background-image: url("light-wooden-background.jpg");
+  margin:0;
+  padding:0;
+}
+
+#wrapper, #header {
+  position:relative;
+}
+
+#header {
+  text-align: center; 
+  border-bottom: 2px solid black; 
+}
+  
+button.functions { 
+  margin: 5px; 
+  padding: 2px; 
+}
+
+#left {
+  float:left; 
+  display: inline-grid; 
+  width: 39%;
+  height: 90%; 
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#right1 {
+  float: left; 
+  display: inline-grid; 
+  width: 30%;
+  height: 45%; 
+  border-right: 2px solid black; 
+}
+
+#right2 { 
+  float: right; 
+  display: inline-grid; 
+  width: 30%;
+  height: 45%; 
+  overflow: auto; 
+  border-right: 2px solid black; 
+}
+
+#right3 { 
+  float: left; 
+  width: 60%;
+  overflow: auto; 
+  height: 45%; 
+  border-right: 2px solid black; 
+  border-top: 2px solid black; 
+  border-bottom: 2px solid black; 
+}
+
+#right3 form { 
+  float: left; 
+  padding: 5px; 
+  width: 60%; 
+}
+
+#right3 form input { 
+  border: 0; 
+  margin: 2px; 
+  padding: 5px; 
+  margin-right: .5%;
+  width: 88%; 
+}
+
+#right3 form button { 
+  width: 9%; 
+  background: #c0c0c0; 
+  border: none; 
+  padding: 5px; 
+}
+
+.gateway { 
+  padding: 10px; 
+}
+
+div.boards { 
+  margin: 5px; 
+  padding: 5px; 
+}
+
+#board { 
+  width: 85%;
+}
+
+#smallboard { 
+  width: 50%;
+}
+
+.textlist { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.textlist li { 
+  padding: 5px 10px; 
+}
+
+.red { 
+  background-color: red;
+}
