@@ -9,8 +9,10 @@ const fs = require('fs');
 var path = require('path'),
     url  = require('url'),
     express = require('express'),
-    http = require('http').Server(app),
-    io = require('socket.io')(http);
+//    http = require('http').Server(app),
+    http = require('http').createServer(app), 
+//    io = require('socket.io')(http);
+    io = require('socket.io').listen(http); 
     
 app.use(express.static('public'));
 
@@ -20,7 +22,8 @@ app.get('/', function(req, res) {
   res.sendFile(clientFile);
 });
 
-io.on('connection', function(socket) {
+//io.on('connection', function(socket) {
+io.sockets.on('connection', function(socket) {
   socket.on('chat message', function(msg) {
     io.emit('chat message', msg);
   });
@@ -30,7 +33,8 @@ io.on('connection', function(socket) {
   });
 });
 
-io.on('connection', function(socket) { 
+//io.on('connection', function(socket) {
+io.sockets.on('connection', function(socket) {  
   console.log('a user connected'); 
   socket.on('disconnect', function() {
     console.log('user disconnected');
