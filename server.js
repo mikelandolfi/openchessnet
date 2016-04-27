@@ -10,7 +10,6 @@ var path = require('path'),
     url  = require('url'),
     express = require('express'),
     http = require('http').Server(app),
-    stockfish = require('stockfish'),
     io = require('socket.io')(http);
     
 app.use(express.static('public'));
