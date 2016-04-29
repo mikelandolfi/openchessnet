@@ -36,6 +36,7 @@ $('form').submit(function() {
   return false;
 });
 socket.on('chat message', function(msg) {
+  console.log('teacher.js: socket.on chat message...');
   $('#messages').append($('<li>').text(msg));
 });
 
@@ -50,7 +51,7 @@ $('#board').on('onChange', function() {
 $(document).ready(function() {  
   $('#startbtn').on('click', board.start);
   $('#clearboard').on('click', board.clear);
-  $('#flip').on('click', board.orientation('flip'));
+  //$('#flip').on('click', board.orientation('flip'));
   //$('#board').dblclick(onDblclick); 
   //$(window).resize(board.resize);
 });
