@@ -9,11 +9,10 @@ const fs = require('fs');
 var path = require('path'),
     url  = require('url'),
     express = require('express'),
-//    http = require('http').Server(app),
-    http = require('http').createServer(app), 
-//    io = require('socket.io')(http);
-    io = require('socket.io').listen(http); 
-    
+    http = require('http').Server(app),
+    //io = require('socket.io').listen(http); // maybe this works better with Heroku?
+    io = require('socket.io')(http);
+
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
@@ -23,7 +22,9 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
+  console.log('io.on connection...');
   socket.on('chat message', function(msg) {
+    console.log('socket.on chat message...');
     io.emit('chat message', msg);
   });
   // custom event for transmitting main board move to students
