@@ -18,7 +18,8 @@ function disconnect() {
   window.location = 'gateway.html';
 }
 
-var socket = io.connect();
+//var socket = io.connect();
+var socket = io(); 
 $('form').submit(function() {
   socket.emit('chat message', $('#m').val());
   $('#m').val('');
