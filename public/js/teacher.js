@@ -1,6 +1,7 @@
 'use strict'; 
 
-var socket = io.connect();
+//var socket = io.connect();
+var socket = io(); 
 var onChange = function(oldPos, newPos) { 
   var FEN = ChessBoard.objToFen(newPos);
   socket.emit('newpos', FEN); 
