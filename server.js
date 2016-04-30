@@ -2,9 +2,7 @@
 
 var app = require('express')();
 
-// need a var here to keep track of an instructor already having logged in
-
-const fs = require('fs');
+//const fs = require('fs');
 
 var path = require('path'),
     url  = require('url'),
@@ -12,7 +10,11 @@ var path = require('path'),
     http = require('http').Server(app),
     //io = require('socket.io').listen(http); // maybe this works better with Heroku?
     io = require('socket.io')(http);
-
+/*
+// supposedly this makes Heroku work with socket.io
+io.set('transports', ['xhr-polling']);
+io.set('polling duration', 10);
+*/
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
@@ -39,11 +41,12 @@ io.on('connection', function(socket) {
     console.log('user disconnected');
   });
 });
-// do not hard-code the port for Heroku app!
-/*
+// do not hard-code the port for Heroku app!?
+
 http.listen(3000, function() {
   console.log('listening on *:3000');
-});*/
-app.listen(process.env.PORT || 3000, function() { 
+});
+// ...but doing it this way breaks the app completely.
+/*app.listen(process.env.PORT || 3000, function() { 
   console.log("Listening on port %d in %s mode", this.address().port, app.settings.env); 
-}); 
+}); */
