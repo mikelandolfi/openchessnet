@@ -42,11 +42,10 @@ io.on('connection', function(socket) {
   });
 });
 // do not hard-code the port for Heroku app!?
-
+/*
 http.listen(3000, function() {
   console.log('listening on *:3000');
-});
-// ...but doing it this way breaks the app completely.
-/*app.listen(process.env.PORT || 3000, function() { 
+});*/
+http.listen(process.env.PORT || 3000, function() { 
   console.log("Listening on port %d in %s mode", this.address().port, app.settings.env); 
-}); */
+}); 
